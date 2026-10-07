@@ -12,12 +12,13 @@ export interface Series {
   rarityTiers: {
     label: string
     pct: number
-    color: string
   }[]
   tags: string[]
   isNew?: boolean
   isHot?: boolean
   isExclusive?: boolean
+  /** Foto real del producto (ruta en public/ o URL). Si existe, sustituye a la ilustración. */
+  photo?: string
 }
 
 export const catalog: Series[] = [
@@ -31,10 +32,10 @@ export const catalog: Series[] = [
     itemsInSeries: 8,
     description: 'La segunda entrega. Figuras extrañas, objetos sin lógica y un hidden que nadie ha encontrado todavía.',
     rarityTiers: [
-      { label: 'Common',  pct: 55, color: 'bg-gray-500' },
-      { label: 'Rare',    pct: 28, color: 'bg-blue-500' },
-      { label: 'Secret',  pct: 12, color: 'bg-purple-500' },
-      { label: 'Hidden',  pct: 5,  color: 'bg-zarrio-sacred' },
+      { label: 'Common',  pct: 55 },
+      { label: 'Rare',    pct: 28 },
+      { label: 'Secret',  pct: 12 },
+      { label: 'Hidden',  pct: 5 },
     ],
     tags: ['Exclusivo', 'Oddity', 'Series 2'],
     isHot: true,
@@ -50,11 +51,11 @@ export const catalog: Series[] = [
     itemsInSeries: 226,
     description: 'Booster packs de la última expansión. Full Art, Special Illustration Rare y Gold Cards.',
     rarityTiers: [
-      { label: 'Common',    pct: 60, color: 'bg-gray-500' },
-      { label: 'Uncommon',  pct: 25, color: 'bg-green-600' },
-      { label: 'Rare',      pct: 10, color: 'bg-blue-500' },
-      { label: 'Ultra Rare', pct: 4, color: 'bg-purple-500' },
-      { label: 'Gold',       pct: 1, color: 'bg-brand-500' },
+      { label: 'Common',    pct: 60 },
+      { label: 'Uncommon',  pct: 25 },
+      { label: 'Rare',      pct: 10 },
+      { label: 'Ultra Rare', pct: 4 },
+      { label: 'Gold',       pct: 1 },
     ],
     tags: ['TCG', 'Pokémon'],
     isHot: true,
@@ -69,10 +70,10 @@ export const catalog: Series[] = [
     itemsInSeries: 15,
     description: 'Metal real, ruedas de goma, detalles collectors. Y el Treasure Hunt que nadie quiere perderse.',
     rarityTiers: [
-      { label: 'Standard',     pct: 70, color: 'bg-gray-500' },
-      { label: 'Premium',      pct: 20, color: 'bg-blue-500' },
-      { label: 'Super T-Hunt', pct: 7,  color: 'bg-orange-500' },
-      { label: 'Treasure',     pct: 3,  color: 'bg-brand-500' },
+      { label: 'Standard',     pct: 70 },
+      { label: 'Premium',      pct: 20 },
+      { label: 'Super T-Hunt', pct: 7 },
+      { label: 'Treasure',     pct: 3 },
     ],
     tags: ['Hot Wheels', 'Diecast'],
     isNew: true,
@@ -87,9 +88,9 @@ export const catalog: Series[] = [
     itemsInSeries: 12,
     description: '12 figuras. Siente el código de puntos o arriésgate a la suerte. Tú decides.',
     rarityTiers: [
-      { label: 'Base',   pct: 75, color: 'bg-yellow-600' },
-      { label: 'Rare',   pct: 20, color: 'bg-orange-500' },
-      { label: 'Secret', pct: 5,  color: 'bg-brand-500' },
+      { label: 'Base',   pct: 75 },
+      { label: 'Rare',   pct: 20 },
+      { label: 'Secret', pct: 5 },
     ],
     tags: ['LEGO', 'CMF'],
     isNew: true,
@@ -104,10 +105,10 @@ export const catalog: Series[] = [
     itemsInSeries: 24,
     description: 'Horror, Gamer y Pop Culture. 24 figuras mezcladas. Chase al fondo.',
     rarityTiers: [
-      { label: 'Common',   pct: 65, color: 'bg-gray-500' },
-      { label: 'Uncommon', pct: 22, color: 'bg-green-600' },
-      { label: 'Rare',     pct: 10, color: 'bg-blue-500' },
-      { label: 'Chase',    pct: 3,  color: 'bg-brand-500' },
+      { label: 'Common',   pct: 65 },
+      { label: 'Uncommon', pct: 22 },
+      { label: 'Rare',     pct: 10 },
+      { label: 'Chase',    pct: 3 },
     ],
     tags: ['Funko', 'Mystery'],
   },
@@ -121,10 +122,10 @@ export const catalog: Series[] = [
     itemsInSeries: 8,
     description: 'La serie original. Casi agotada. Si la encuentras, coge dos.',
     rarityTiers: [
-      { label: 'Common',  pct: 55, color: 'bg-gray-500' },
-      { label: 'Rare',    pct: 28, color: 'bg-blue-500' },
-      { label: 'Secret',  pct: 12, color: 'bg-purple-500' },
-      { label: 'Hidden',  pct: 5,  color: 'bg-zarrio-sacred' },
+      { label: 'Common',  pct: 55 },
+      { label: 'Rare',    pct: 28 },
+      { label: 'Secret',  pct: 12 },
+      { label: 'Hidden',  pct: 5 },
     ],
     tags: ['Exclusivo', 'Oddity', 'Agotándose'],
     isExclusive: true,

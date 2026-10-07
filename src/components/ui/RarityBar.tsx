@@ -1,40 +1,26 @@
-interface RarityTier {
-  label: string
-  pct: number
+interface RarityBarProps {
+  tiers: { label: string; pct: number }[]
 }
 
-interface RarityBarProps {
-  tiers: RarityTier[]
-}
+const ramp = ['bg-rar1', 'bg-rar2', 'bg-rar3', 'bg-rar4', 'bg-rar5']
 
 export default function RarityBar({ tiers }: RarityBarProps) {
-  const total = tiers.length
+  const last = tiers.length - 1
 
   return (
-    <div className="flex flex-col gap-2 w-full">
+    <ul className="flex flex-col gap-3 w-full" aria-label="Tasas de aparición">
       {tiers.map((tier, i) => {
-        // Most rare = last item (lowest pct). Give it the brightest color.
-        const brightness = i === total - 1 ? 'bg-brand-500' :
-                           i === total - 2 ? 'bg-brand-700' :
-                                             'bg-white/20'
-
+        const color = ramp[last === 0 ? 0 : Math.round((i * 4) / last)]
         return (
-          <div key={tier.label} className="flex items-center gap-3">
-            <span className="text-xs text-gray-600 uppercase tracking-wide w-20 shrink-0 truncate">
-              {tier.label}
-            </span>
-            <div className="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
-              <div
-                className={`h-full rounded-full ${brightness} transition-all duration-500`}
-                style={{ width: `${tier.pct}%` }}
-              />
+          <li key={tier.label} className="flex items-center gap-3">
+            <span className="w-24 shrink-0 text-sm font-semibold text-ink">{tier.label}</span>
+            <div className="flex-1 h-3.5 rounded-full bg-ink/15 overflow-hidden" aria-hidden="true">
+              <div className={`h-full rounded-full ${color} transition-all duration-700`} style={{ width: `${tier.pct}%` }} />
             </div>
-            <span className="text-xs text-gray-600 w-8 text-right shrink-0 tabular-nums">
-              {tier.pct}%
-            </span>
-          </div>
+            <span className="w-12 shrink-0 text-right text-sm font-bold tabular-nums text-ink">{tier.pct}%</span>
+          </li>
         )
       })}
-    </div>
+    </ul>
   )
 }
