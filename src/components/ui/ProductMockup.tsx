@@ -90,7 +90,7 @@ function Pattern({ type, color }: { type: Config['pattern']; color: string }) {
   return null
 }
 
-export default function ProductMockup({ type }: { type: MockupStyle }) {
+export default function ProductMockup({ type }: { type: MockupStyle; isNew?: boolean; isHot?: boolean }) {
   const c = configs[type]
   const isOddity = type === 'oddity'
 

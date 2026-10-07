@@ -13,7 +13,7 @@ export default function NavBar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-zarrio-black/80 backdrop-blur-md border-b border-white/5">
-      <a href="/" className="text-md font-semibold tracking-widest uppercase text-zarrio-bone">
+      <a href={import.meta.env.BASE_URL} className="text-md font-semibold tracking-widest uppercase text-zarrio-bone">
         Holy Zarrio
       </a>
 
